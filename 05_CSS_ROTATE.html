@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS ROTATE</title>
+	<style>
+		body
+		{
+			background-color: black;
+		}
+		#main
+		{
+			width: 500px;
+			height: 600px;
+			background-color: white;
+			margin: 20px auto;
+			border: 3px solid white;
+			border-radius: 20px;
+			position: relative;
+			overflow: hidden;
+		}
+		#main>#lc
+		{
+			width: 250px;
+			height: inherit;
+			border-radius: 20px;
+			background-color: saddlebrown;
+			position: absolute;
+			float: left;
+			transition: all 2s linear 2s;
+		}
+		#main>#rc
+		{
+			width: 250px;
+			height: inherit;
+			border-radius: 20px;
+			background-color: saddlebrown;
+			position: absolute;
+			margin-left: 250px;
+			transition: all 2s linear 2s;
+		}
+		#main>img
+		{
+			width: inherit;
+			height: inherit;
+			filter: grayscale(100%);
+			border-radius: inherit;
+			position: absolute;
+			transition: all 2s linear 4s;
+		}
+		#main:hover>img
+		{
+			filter: grayscale(0%);
+			transform: scale(1.5);
+		}
+		#main:hover>#lc
+		{
+			transform: perspective(200px) rotateY(110deg) translateZ(-100px);
+		}
+		#main:hover>#rc
+		{
+			transform: perspective(200px) rotateY(-110deg) translateZ(-100px);
+		}
+		#g
+		{
+			width: 500px;
+			height: 10px;
+			color: orangered;
+			text-align: center;
+			margin: 1px auto;
+		}
+		#main>#curtain
+		{
+			background-color: yellow;
+			width: inherit;
+			height: inherit;
+			position: absolute;
+			transition: all 2s linear 0s;
+		}
+		#main:hover>#curtain
+		{
+			transform: translateY(-650px);
+		}
+	</style>
+</head>
+<body>
+	<div id="g"><h1>GOVINDHA GOVINDHA</h1></div>
+	<div id="main">
+		<img src="images/venky.jpg">
+		<div id="lc"></div>
+		<div id="rc"></div>
+		<div id="curtain"></div>
+	</div>
+</body>
+</html>
